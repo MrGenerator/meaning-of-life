@@ -16,7 +16,9 @@
             --border: #2a3142;
             --success: #6a9d73;
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Crimson Pro', serif;
             background: var(--primary-bg);
@@ -24,6 +26,7 @@
             line-height: 1.7;
             overflow-x: hidden;
         }
+
         .bg-pattern {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             opacity: 0.03; pointer-events: none;
@@ -32,10 +35,12 @@
             background-size: 50px 50px;
             animation: drift 60s ease-in-out infinite;
         }
+
         @keyframes drift {
             0%, 100% { transform: translate(0, 0); }
             50% { transform: translate(30px, 30px); }
         }
+
         .floating-quote {
             position: fixed; font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem; font-style: italic; color: var(--accent);
@@ -43,258 +48,183 @@
             max-width: 400px; text-align: center;
             animation: floatAndFade 25s ease-in-out infinite;
         }
+
         .floating-quote.top-right { top: 15%; right: 5%; }
         .floating-quote.bottom-left { bottom: 20%; left: 5%; }
         .floating-quote.middle { top: 50%; right: 8%; transform: translateY(-50%); }
+
         @keyframes floatAndFade {
             0% { opacity: 0; transform: translateY(0px); }
             10% { opacity: 0.15; }
+            50% { opacity: 0.15; transform: translateY(-20px); }
             90% { opacity: 0.15; }
             100% { opacity: 0; transform: translateY(-40px); }
         }
+
         header {
             padding: 60px 30px 40px; text-align: center;
             border-bottom: 1px solid var(--border);
             background: linear-gradient(180deg, var(--secondary-bg) 0%, transparent 100%);
             animation: fadeInDown 1s ease; position: relative; z-index: 1;
         }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+
         h1 {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 300; color: var(--accent);
             margin-bottom: 20px; letter-spacing: 2px;
         }
-        .subtitle {
-            font-size: 1.2rem; color: var(--text-secondary);
-            font-weight: 300; max-width: 600px; margin: 0 auto;
-        }
-        .container {
-            max-width: 1100px; margin: 0 auto; padding: 60px 30px;
-            position: relative; z-index: 1;
-        }
-        .intro { text-align: center; margin-bottom: 80px; animation: fadeIn 1.2s ease 0.3s backwards; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .intro p {
-            font-size: 1.3rem; line-height: 2; color: var(--text-secondary);
-            max-width: 700px; margin: 0 auto;
-        }
+
+        .subtitle { font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 30px; position: relative; z-index: 1; }
+
         .philosophies { display: grid; gap: 40px; margin-bottom: 80px; }
+
         .philosophy-card {
             background: var(--secondary-bg); border: 1px solid var(--border);
-            padding: 40px 35px; border-radius: 2px; position: relative;
-            overflow: hidden; animation: fadeIn 1s ease backwards;
+            padding: 40px 35px; border-radius: 2px; animation: fadeIn 1s ease backwards;
         }
-        .philosophy-card:nth-child(1) { animation-delay: 0.4s; }
-        .philosophy-card:nth-child(2) { animation-delay: 0.5s; }
-        .philosophy-card:nth-child(3) { animation-delay: 0.6s; }
-        .philosophy-card:nth-child(4) { animation-delay: 0.7s; }
-        .philosophy-card:nth-child(5) { animation-delay: 0.8s; }
-        .philosophy-card:nth-child(6) { animation-delay: 0.9s; }
-        .philosophy-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
         .philosophy-title {
             font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;
-            color: var(--accent); margin-bottom: 15px; font-weight: 500;
+            color: var(--accent); margin-bottom: 15px;
         }
-        .philosophy-desc {
-            color: var(--text-secondary); line-height: 1.8;
-            font-size: 1.05rem; margin-bottom: 30px;
-        }
+
         .question-block {
             margin-bottom: 25px; padding: 20px; background: var(--primary-bg);
-            border-left: 3px solid var(--accent); border-radius: 2px;
+            border-left: 3px solid var(--accent);
         }
-        .question-text {
-            color: var(--text-primary); font-size: 1rem;
-            margin-bottom: 12px; font-weight: 500;
-        }
+
         .answer-input {
             width: 100%; min-height: 80px; background: var(--secondary-bg);
             border: 1px solid var(--border); color: var(--text-primary);
-            padding: 12px; font-family: 'Crimson Pro', serif; font-size: 1rem;
-            line-height: 1.6; border-radius: 2px; resize: vertical;
-            transition: border-color 0.3s ease;
+            padding: 12px; font-family: 'Crimson Pro', serif; resize: vertical;
         }
-        .answer-input:focus { outline: none; border-color: var(--accent); }
-        .analyze-section {
-            text-align: center; margin: 80px 0; padding: 60px 40px;
-            background: var(--secondary-bg); border: 1px solid var(--border);
-            border-radius: 2px;
-        }
+
+        .analyze-section { text-align: center; margin: 80px 0; padding: 60px 40px; background: var(--secondary-bg); border: 1px solid var(--border); }
+
         .analyze-button {
-            display: inline-block;
             background: linear-gradient(135deg, var(--accent) 0%, #b8915f 100%);
             color: var(--primary-bg); padding: 20px 60px; border: none;
-            border-radius: 2px; font-family: 'Cormorant Garamond', serif;
-            font-weight: 600; font-size: 1.4rem; letter-spacing: 1px;
-            cursor: pointer; transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.4rem; cursor: pointer;
         }
-        .result-section {
-            display: none; margin: 60px 0; padding: 50px 40px;
-            background: linear-gradient(135deg, var(--secondary-bg) 0%, rgba(212, 165, 116, 0.05) 100%);
-            border: 2px solid var(--accent); border-radius: 2px; animation: fadeIn 1s ease;
-        }
+
+        .result-section { display: none; margin: 60px 0; padding: 50px 40px; border: 2px solid var(--accent); background: var(--secondary-bg); }
         .result-section.visible { display: block; }
-        .result-title {
-            font-family: 'Cormorant Garamond', serif; font-size: 2.5rem;
-            color: var(--accent); text-align: center; margin-bottom: 30px;
-        }
-        .result-content {
-            color: var(--text-primary); font-size: 1.05rem; line-height: 1.9;
-            max-width: 850px; margin: 0 auto;
-        }
-        .result-content strong { color: var(--accent); font-weight: 600; }
-        footer {
-            border-top: 1px solid var(--border); padding: 60px 30px;
-            text-align: center; background: linear-gradient(180deg, transparent 0%, var(--secondary-bg) 100%);
-            position: relative; z-index: 1;
-        }
-        .share-section {
-            text-align: center; margin: 40px 0 20px 0; padding: 40px 30px;
-            background: var(--secondary-bg); border: 1px solid var(--border); border-radius: 2px;
-        }
-        .share-button {
-            display: inline-block; background: linear-gradient(135deg, #6a9d73 0%, #5a8763 100%);
-            color: white; padding: 16px 45px; border: none; border-radius: 2px;
-            font-weight: 500; font-size: 1.05rem; letter-spacing: 1px; cursor: pointer;
-        }
-        .about-creator {
-            background: rgba(212, 165, 116, 0.05); border-left: 3px solid var(--accent);
-            padding: 25px 30px; margin-bottom: 40px; border-radius: 2px;
-        }
-        .donate-button {
-            display: inline-block; background: linear-gradient(135deg, var(--accent) 0%, #b8915f 100%);
-            color: var(--primary-bg); padding: 16px 45px; text-decoration: none;
-            border-radius: 2px; font-weight: 500;
-        }
+        .result-title { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--accent); text-align: center; margin-bottom: 30px; }
+
         .loading-spinner {
             display: inline-block; width: 30px; height: 30px; border: 3px solid var(--border);
-            border-top-color: var(--accent); border-radius: 50%;
-            animation: spin 1s linear infinite; margin-left: 15px; vertical-align: middle;
+            border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin-left: 15px; vertical-align: middle;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .philosophy-card { padding: 30px 25px; }
-        }
+
+        footer { border-top: 1px solid var(--border); padding: 60px 30px; text-align: center; background: var(--secondary-bg); }
+        .donate-button { display: inline-block; background: var(--accent); color: var(--primary-bg); padding: 16px 45px; text-decoration: none; font-weight: 500; }
     </style>
 </head>
-<body>
+
+    <body>
     <div class="bg-pattern"></div>
     <div class="floating-quote top-right" id="quote-1"></div>
     <div class="floating-quote bottom-left" id="quote-2"></div>
-    <div class="floating-quote middle" id="quote-3"></div>
 
     <header>
         <h1>В поисках смысла</h1>
-        <p class="subtitle">Ответьте на вопросы честно — и откройте свой уникальный путь</p>
+        <p class="subtitle">Откройте свой уникальный путь через глубокие вопросы</p>
     </header>
 
     <div class="container">
-        <section class="intro">
-            <p>Эти вопросы помогут вам увидеть вашу суть и ваш смысл. Отвечайте искренне — и вы получите глубокий анализ того, что действительно важно для вас.</p>
-        </section>
-
-        <section class="philosophies" id="questions-container">
-            <div class="philosophy-card"><div class="philosophy-icon">🎭</div><h3 class="philosophy-title">Экзистенциализм</h3><div class="question-block"><p class="question-text">Если бы не было никаких правил, кем бы вы стали?</p><textarea class="answer-input" data-question="existentialism-1"></textarea></div><div class="question-block"><p class="question-text">Какой выбор вы откладываете из страха?</p><textarea class="answer-input" data-question="existentialism-2"></textarea></div></div>
-
-            <div class="philosophy-card"><div class="philosophy-icon">🏛️</div><h3 class="philosophy-title">Стоицизм</h3><div class="question-block"><p class="question-text">Что из того, что вас беспокоит, вне вашего контроля?</p><textarea class="answer-input" data-question="stoicism-1"></textarea></div><div class="question-block"><p class="question-text">Какие ваши реакции вы можете изменить?</p><textarea class="answer-input" data-question="stoicism-2"></textarea></div></div>
-
-            <div class="philosophy-card"><div class="philosophy-icon">🧘</div><h3 class="philosophy-title">Буддизм</h3><div class="question-block"><p class="question-text">К чему вы чрезмерно привязаны?</p><textarea class="answer-input" data-question="buddhism-1"></textarea></div><div class="question-block"><p class="question-text">Что бы вы отпустили ради покоя?</p><textarea class="answer-input" data-question="buddhism-3"></textarea></div></div>
-            
-            <div class="philosophy-card"><div class="philosophy-icon">🌟</div><h3 class="philosophy-title">Гедонизм</h3><div class="question-block"><p class="question-text">Что приносит вам настоящую радость?</p><textarea class="answer-input" data-question="hedonism-1"></textarea></div></div>
-            
-            <div class="philosophy-card"><div class="philosophy-icon">🤝</div><h3 class="philosophy-title">Гуманизм</h3><div class="question-block"><p class="question-text">Какой след вы хотите оставить?</p><textarea class="answer-input" data-question="humanism-2"></textarea></div></div>
+        <section class="philosophies">
+            <div class="philosophy-card">
+                <h3 class="philosophy-title">📜 Ваши размышления</h3>
+                <div class="question-block">
+                    <p class="question-text">Если бы не было никаких правил, кем бы вы стали?</p>
+                    <textarea class="answer-input" data-question="q1"></textarea>
+                </div>
+                <div class="question-block">
+                    <p class="question-text">Какой след вы хотите оставить в мире?</p>
+                    <textarea class="answer-input" data-question="q2"></textarea>
+                </div>
+                <div class="question-block">
+                    <p class="question-text">Что приносит вам настоящую радость?</p>
+                    <textarea class="answer-input" data-question="q3"></textarea>
+                </div>
+            </div>
         </section>
 
         <section class="analyze-section">
             <button id="analyze-btn" class="analyze-button" onclick="analyzeMeaning()">✨ Узнать мой смысл жизни</button>
-            <p id="progress-text" class="progress-text" style="display: none;"></p>
+            <p id="progress-text" style="display: none; margin-top: 20px; color: #a8a8a8;">Это займет около минуты...</p>
         </section>
 
         <section id="result-section" class="result-section">
             <h2 class="result-title">Ваш уникальный смысл жизни</h2>
-            <div id="result-content" class="result-content"></div>
-            <div class="disclaimer" style="margin-top:30px; font-style:italic; color:#666;">Это лишь интерпретация, но мы надеемся, она поможет вам.</div>
-        </section>
-    </div>
-
-    <div class="container">
-        <section class="share-section">
-            <h3>Понравилось?</h3>
-            <button class="share-button" onclick="shareApp()">📤 Поделиться приложением</button>
-            <p class="stats-counter" id="stats-counter"></p>
+            <div id="result-content" style="line-height: 1.9; font-size: 1.1rem;"></div>
         </section>
     </div>
 
     <footer>
         <div class="support-section">
-            <div class="about-creator"><p>Привет! Меня зовут Ильнур. Создал это приложение, чтобы мы искали смысл вместе.</p></div>
-            <a href="https://boosty.to/mrgenerator/donate" class="donate-button" target="_blank">☕ Поддержать на Boosty</a>
-            <div class="credits"><p>Создано с философией и кодом • 2026</p></div>
+            <p style="margin-bottom: 20px;">Создано Ильнуром для тех, кто ищет ответы.</p>
+            <a href="https://boosty.to/mrgenerator/donate" class="donate-button" target="_blank">☕ Поддержать проект</a>
         </div>
     </footer>
 
     <script>
-        const quotes = ["Смысл жизни — найти свой дар.", "Тот, у кого есть Зачем, вынесет любое Как.", "Будь собой."];
-        function initQuotes() {
-            document.querySelectorAll('.floating-quote').forEach(el => el.textContent = quotes[Math.floor(Math.random()*quotes.length)]);
-        }
-        window.addEventListener('load', initQuotes);
+        const quotes = ["Смысл жизни — найти свой дар.", "Тот, у кого есть Зачем, вынесет любое Как.", "Жизнь — это создание себя."];
+        document.getElementById('quote-1').textContent = quotes[0];
+        document.getElementById('quote-2').textContent = quotes[1];
 
-        function parseMarkdownToHTML(text) {
-            return text.replace(/^## (.+)$/gm, '<h2>$1</h2>').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+        function parseMarkdown(text) {
+            return text.replace(/^## (.+)$/gm, '<h2 style="color:#d4a574; margin-top:20px;">$1</h2>')
+                       .replace(/\*\*(.+?)\*\*/g, '<strong style="color:#d4a574;">$1</strong>')
+                       .replace(/\n/g, '<br>');
         }
 
         async function analyzeMeaning() {
-            const button = document.getElementById('analyze-btn');
-            const resultSection = document.getElementById('result-section');
-            const resultContent = document.getElementById('result-content');
-            
-            // Собираем ответы
+            const btn = document.getElementById('analyze-btn');
+            const prog = document.getElementById('progress-text');
+            const resSec = document.getElementById('result-section');
+            const resCont = document.getElementById('result-content');
+
             const answers = {};
             let hasAnswers = false;
             document.querySelectorAll('.answer-input').forEach(input => {
-                if(input.value.trim()) {
+                if (input.value.trim()) {
                     hasAnswers = true;
-                    answers[input.closest('.question-block').querySelector('.question-text').textContent] = input.value.trim();
+                    const q = input.closest('.question-block').querySelector('.question-text').textContent;
+                    answers[q] = input.value.trim();
                 }
             });
 
-            if (!hasAnswers) { alert('Ответьте хотя бы на один вопрос!'); return; }
+            if (!hasAnswers) return alert('Пожалуйста, ответьте на вопросы!');
 
-            button.disabled = true; button.innerHTML = '🔮 Думаю...';
-            
+            btn.disabled = true;
+            btn.innerHTML = '🔮 Анализирую... <span class="loading-spinner"></span>';
+            prog.style.display = 'block';
+
             try {
-                // ЗАПРОС НА VERCEL
                 const response = await fetch('/api/analyze', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ answers })
                 });
-                
-                const data = await response.json();
-                if (!response.ok) throw new Error(data.error || 'Ошибка');
 
-                resultContent.innerHTML = parseMarkdownToHTML(data.analysis);
-                resultSection.classList.add('visible');
-                resultSection.scrollIntoView({ behavior: 'smooth' });
+                const data = await response.json();
+                if (!response.ok) throw new Error(data.error || 'Ошибка сервера');
+
+                resCont.innerHTML = parseMarkdown(data.analysis);
+                resSec.classList.add('visible');
+                resSec.scrollIntoView({ behavior: 'smooth' });
             } catch (e) {
                 alert('Ошибка: ' + e.message);
             } finally {
-                button.disabled = false; button.innerHTML = '✨ Узнать смысл';
+                btn.disabled = false;
+                btn.innerHTML = '✨ Узнать мой смысл жизни';
+                prog.style.display = 'none';
             }
-        }
-        
-        function shareApp() {
-            if (navigator.share) navigator.share({ title: 'В поисках смысла', url: window.location.href });
-            else prompt('Скопируйте ссылку:', window.location.href);
         }
     </script>
 </body>
