@@ -1,0 +1,8 @@
+{
+  "name": "meaning-of-life",
+  "version": "1.0.0",
+  "description": "Философское приложение для поиска смысла жизни",
+  "dependencies": {
+    "@google/genai": "^0.4.0"
+  }
+}
